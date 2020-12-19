@@ -3,9 +3,9 @@ class Movies < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  set(logging: true, server: :puma)
+  set(logging: true, server: :puma, views: settings.root + '/app/views')
 
   get '/' do
-    'Hello world!'
+    slim :movies
   end
 end

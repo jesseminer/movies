@@ -1,0 +1,20 @@
+body {
+  font-family: Arial;
+}
+.container {
+  width: 50%;
+  margin: 2em auto;
+}
+.movie {
+  display: flex;
+  align-items: center;
+  border: 2px solid #bbbbbb;
+  padding: 1em;
+  border-radius: 16px;
+  margin-bottom: 1em;
+}
+.movie img {
+  margin-right: 1em;
+  max-height: 150px;
+  max-width: 100px;
+}
