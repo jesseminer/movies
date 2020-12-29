@@ -3,17 +3,12 @@ html
     link href="/movies.css" type="text/css" rel="stylesheet"
   body
     .container
-      .movie
-        img src="images/The_Kindergarten_Teacher.jpg"
-        div
-          | The Kindergarten Teacher
-          br
-          | 2018
-          br
-          | Watched on 9/1/2020
-      .movie
-        img src="/images/black_panther.jpg"
-        div
-          | The Black Panther
-          br
-          | 2018
+      - Movie.order(date_watched: :desc).each do |movie|
+        .movie
+          img src="images/#{movie.image}"
+          div
+            | #{movie.title}
+            br
+            | #{movie.release_year}
+            br
+            | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}

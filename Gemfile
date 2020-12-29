@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.7.0'
 
 gem 'puma'
+gem 'rake'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'slim'
