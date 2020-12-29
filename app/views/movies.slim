@@ -5,7 +5,7 @@ html
     .container
       - Movie.order(date_watched: :desc).each do |movie|
         .movie
-          img src="images/#{movie.image}"
+          img src=movie.image
           div
             | #{movie.title}
             br
