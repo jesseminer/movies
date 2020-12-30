@@ -3,6 +3,8 @@ html
     link href="/movies.css" type="text/css" rel="stylesheet"
   body
     .container
+      .margin-bottom
+        a href="/movies/new" Add Movie
       - Movie.order(date_watched: :desc).each do |movie|
         .movie
           img src=movie.image
@@ -11,4 +13,7 @@ html
             br
             | #{movie.release_year}
             br
-            | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
+            - if movie.date_watched.present?
+              | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
+            - else
+              | Have not watched yet

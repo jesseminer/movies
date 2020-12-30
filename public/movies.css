@@ -1,8 +1,9 @@
 body {
   font-family: Arial;
+  line-height: 1.35em;
 }
 .container {
-  width: 50%;
+  max-width: 600px;
   margin: 2em auto;
 }
 .movie {
@@ -17,4 +18,32 @@ body {
   margin-right: 1em;
   max-height: 150px;
   max-width: 100px;
+}
+
+.margin-top {
+  margin-top: 2em;
+}
+
+.margin-bottom {
+  margin-bottom: 2em;
+}
+
+input {
+  font-size: 1.4em;
+  margin-top: 0.4em;
+  border-radius: 5px;
+  border: 1px solid #aaaaaa;
+  padding: .5em 1em;
+  width: 100%;
+}
+
+button {
+  padding: 0.6em;
+  font-size: 1em;
+  background-color: mediumblue;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
 }

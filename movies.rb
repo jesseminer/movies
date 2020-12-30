@@ -8,4 +8,13 @@ class Movies < Sinatra::Base
   get '/' do
     slim :movies
   end
+
+  get '/movies/new' do
+    slim 'movies/new'.to_sym
+  end
+
+  post '/movies' do
+    Movie.create(params.slice(:title, :release_year, :date_watched))
+    redirect to('/')
+  end
 end

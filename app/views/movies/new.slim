@@ -1,0 +1,20 @@
+html
+  head
+    link href="/movies.css" type="text/css" rel="stylesheet"
+  body
+    .container
+      form action="/movies" method="post"
+        div
+          label for="title" Title
+        div
+          input#title type="text" name="title" required="required"
+        .margin-top
+          label for="release_year" Release Year
+        div
+          input#release_year type="number" name="release_year" required="required"
+        .margin-top
+          label for="date_watched" Date Watched
+        div
+          input#date_watched type="date" name="date_watched"
+        .margin-top
+          button Create Movie!
