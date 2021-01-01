@@ -14,7 +14,7 @@ class Movies < Sinatra::Base
   end
 
   post '/movies' do
-    Movie.create(params.slice(:title, :release_year, :date_watched))
+    Movie.create(params.slice(:title, :release_year, :date_watched, :image))
     redirect to('/')
   end
 end

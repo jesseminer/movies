@@ -3,7 +3,7 @@ html
     link href="/movies.css" type="text/css" rel="stylesheet"
   body
     .container
-      form action="/movies" method="post"
+      form action="/movies" method="post" enctype="multipart/form-data"
         div
           label for="title" Title
         div
@@ -16,5 +16,9 @@ html
           label for="date_watched" Date Watched
         div
           input#date_watched type="date" name="date_watched"
+        .margin-top
+          label for="image" Image
+        div
+          input#image type="file" name="image"
         .margin-top
           button Create Movie!
