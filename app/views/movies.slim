@@ -7,7 +7,7 @@ html
         a href="/movies/new" Add Movie
       - Movie.order(date_watched: :desc).each do |movie|
         .movie
-          img src=movie.image
+          img src=movie.image_url
           div
             | #{movie.title}
             br
