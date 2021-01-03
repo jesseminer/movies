@@ -1,21 +1,15 @@
-html
-  head
-    meta name="viewport" content="width=device-width, initial-scale=1.0"
-    link href="/movies.css" type="text/css" rel="stylesheet"
-  body
-    .container
-      .margin-bottom
-        a href="/movies/new"
-          button Add Movie 🎫
-      - Movie.order(date_watched: :desc).each do |movie|
-        .movie
-          img src=movie.image_url
-          div
-            | #{movie.title}
-            br
-            | #{movie.release_year}
-            br
-            - if movie.date_watched.present?
-              | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
-            - else
-              | Have not watched yet
+.margin-bottom
+  a href="/movies/new"
+    button Add Movie 🎫
+- Movie.order(date_watched: :desc).each do |movie|
+  .movie
+    img src=movie.image_url
+    div
+      | #{movie.title}
+      br
+      | #{movie.release_year}
+      br
+      - if movie.date_watched.present?
+        | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
+      - else
+        | Have not watched yet

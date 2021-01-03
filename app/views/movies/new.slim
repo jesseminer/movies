@@ -1,25 +1,19 @@
-html
-  head
-    meta name="viewport" content="width=device-width, initial-scale=1.0"
-    link href="/movies.css" type="text/css" rel="stylesheet"
-  body
-    .container
-      form action="/movies" method="post" enctype="multipart/form-data"
-        div
-          label for="title" Title
-        div
-          input#title type="text" name="title" required="required"
-        .margin-top
-          label for="release_year" Release Year
-        div
-          input#release_year type="number" name="release_year" required="required"
-        .margin-top
-          label for="date_watched" Date Watched
-        div
-          input#date_watched type="date" name="date_watched"
-        .margin-top
-          label for="image" Image
-        div
-          input#image type="file" name="image"
-        .margin-top
-          button.full-width Create Movie! 🍿
+form action="/movies" method="post" enctype="multipart/form-data"
+  div
+    label for="title" Title
+  div
+    input#title type="text" name="title" required="required"
+  .margin-top
+    label for="release_year" Release Year
+  div
+    input#release_year type="number" name="release_year" required="required"
+  .margin-top
+    label for="date_watched" Date Watched
+  div
+    input#date_watched type="date" name="date_watched"
+  .margin-top
+    label for="image" Image
+  div
+    input#image type="file" name="image"
+  .margin-top
+    button.full-width Create Movie! 🍿
