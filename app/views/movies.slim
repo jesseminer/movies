@@ -5,7 +5,8 @@ html
   body
     .container
       .margin-bottom
-        a href="/movies/new" Add Movie
+        a href="/movies/new"
+          button Add Movie 🎫
       - Movie.order(date_watched: :desc).each do |movie|
         .movie
           img src=movie.image_url
