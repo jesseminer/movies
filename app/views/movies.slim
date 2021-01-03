@@ -9,6 +9,8 @@
       br
       | #{movie.release_year}
       br
+      a href="/movies/#{movie.id}/edit" Edit Movie
+      br
       - if movie.date_watched.present?
         | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
       - else

@@ -2,18 +2,22 @@ form action="/movies" method="post" enctype="multipart/form-data"
   div
     label for="title" Title
   div
-    input#title type="text" name="title" required="required"
+    input#title type="text" name="title" required="required" value=@movie.title
   .margin-top
     label for="release_year" Release Year
   div
-    input#release_year type="number" name="release_year" required="required"
+    input#release_year type="number" name="release_year" required="required" value=@movie.release_year
   .margin-top
     label for="date_watched" Date Watched
   div
-    input#date_watched type="date" name="date_watched"
+    input#date_watched type="date" name="date_watched" value=@movie.date_watched
   .margin-top
     label for="image" Image
   div
     input#image type="file" name="image"
+  input type="hidden" name="id" value=@movie.id
   .margin-top
-    button.full-width Create Movie! 🍿
+    - if @movie.new_record?
+      button.full-width Create Movie! 🍿
+    - else
+      button.full-width Save Movie Changes! 💾

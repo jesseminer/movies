@@ -10,11 +10,21 @@ class Movies < Sinatra::Base
   end
 
   get '/movies/new' do
+    @movie = Movie.new
     slim 'movies/new'.to_sym
   end
 
   post '/movies' do
-    Movie.create(params.slice(:title, :release_year, :date_watched, :image))
+    if params[:id].present?
+      Movie.find(params[:id]).update(params.slice(:title, :release_year, :date_watched, :image))
+    else
+      Movie.create(params.slice(:title, :release_year, :date_watched, :image))
+    end
     redirect to('/')
+  end
+
+  get '/movies/:id/edit' do
+    @movie = Movie.find(params[:id])
+    slim 'movies/new'.to_sym
   end
 end
