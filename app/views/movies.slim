@@ -9,8 +9,6 @@
       br
       | #{movie.release_year}
       br
-      a href="/movies/#{movie.id}/edit" Edit Movie
-      br
       - if movie.date_watched.present?
         | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
       - else
@@ -18,3 +16,5 @@
       - if movie.rating.present?
         br
         == "Big dick energy rating of #{movie.rating_structure}"
+    .movie-right
+      a href="/movies/#{movie.id}/edit" ✏️
