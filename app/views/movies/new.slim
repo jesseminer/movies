@@ -8,13 +8,17 @@ form action="/movies" method="post" enctype="multipart/form-data"
   div
     input#release_year type="number" name="release_year" required="required" value=@movie.release_year
   .margin-top
+    label for="image" Image
+  div
+    input#image type="file" name="image"
+  .margin-top
     label for="date_watched" Date Watched
   div
     input#date_watched type="date" name="date_watched" value=@movie.date_watched
   .margin-top
-    label for="image" Image
+    label for="rating" Rating
   div
-    input#image type="file" name="image"
+    input#rating type="number" name="rating" value=@movie.rating min="1" max="5"
   input type="hidden" name="id" value=@movie.id
   .margin-top
     - if @movie.new_record?

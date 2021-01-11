@@ -1,4 +1,6 @@
 class Movies < Sinatra::Base
+  VALID_MOVIE_ATTRIBUTES = [:title, :release_year, :date_watched, :image, :rating]
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -16,9 +18,9 @@ class Movies < Sinatra::Base
 
   post '/movies' do
     if params[:id].present?
-      Movie.find(params[:id]).update(params.slice(:title, :release_year, :date_watched, :image))
+      Movie.find(params[:id]).update(params.slice(*VALID_MOVIE_ATTRIBUTES))
     else
-      Movie.create(params.slice(:title, :release_year, :date_watched, :image))
+      Movie.create(params.slice(*VALID_MOVIE_ATTRIBUTES))
     end
     redirect to('/')
   end

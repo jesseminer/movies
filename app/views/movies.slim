@@ -15,3 +15,6 @@
         | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
       - else
         | Have not watched yet
+      - if movie.rating.present?
+        br
+        == "Big dick energy rating of #{movie.rating_structure}"
