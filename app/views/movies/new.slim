@@ -19,9 +19,10 @@ form action="/movies" method="post" enctype="multipart/form-data"
   .margin-top
     label for="rating" Rating
   div
-    input#rating type="number" name="rating" value=@movie.rating min="1" max="5"
+    .dix = '8=====D'
+    input#rating type="range" name="rating" value=@movie.rating min="1" max="5"
   input type="hidden" name="id" value=@movie.id
-  .margin-top
+  .save-movie
     - if @movie.new_record?
       button.full-width Create Movie! 🍿
     - else

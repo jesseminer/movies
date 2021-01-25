@@ -55,6 +55,36 @@ button {
   border: none;
 }
 
+.dix {
+  color: #cccccc;
+  font-size: 9em;
+  margin-top: 60px;
+}
+
+#rating {
+  -moz-appearance: none;
+  border: none;
+  font-size: 1em;
+  height: 15px;
+  margin-left: 5.5em;
+  margin-top: -21.5px;
+  outline: none;
+  width: 25.3em;
+}
+
+#rating::-moz-range-thumb {
+  -moz-appearance: none;
+  background-color: mediumblue;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.save-movie {
+  margin-top: 4em;
+}
+
 .full-width {
   width: 100%;
 }
