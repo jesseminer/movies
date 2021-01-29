@@ -27,3 +27,21 @@ form action="/movies" method="post" enctype="multipart/form-data"
       button.full-width Create Movie! 🍿
     - else
       button.full-width Save Movie Changes! 💾
+
+javascript:
+  var makeDick = function (rating) {
+    var result = ''
+    for (var i = 0; i < rating; i++) {
+      result += '='
+    }
+
+    return `8${result}D`
+  };
+
+  var slider = document.querySelector('#rating')
+  var background = document.querySelector('.dix')
+  background.innerHTML = makeDick(slider.value)
+
+  slider.oninput = function () {
+    background.innerHTML = makeDick(this.value)
+  }
