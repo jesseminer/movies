@@ -63,6 +63,7 @@ button {
 
 #rating {
   -moz-appearance: none;
+  -webkit-appearance: none;
   background-color: transparent;
   border: none;
   font-size: 1em;
@@ -75,6 +76,16 @@ button {
 
 #rating::-moz-range-thumb {
   -moz-appearance: none;
+  background-color: mediumblue;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+#rating::-webkit-slider-thumb {
+  -webkit-appearance: none;
   background-color: mediumblue;
   border-radius: 50%;
   cursor: pointer;
