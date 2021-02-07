@@ -8,6 +8,8 @@ class Movies < Sinatra::Base
   set(logging: true, server: :puma, views: settings.root + '/app/views')
 
   get '/' do
+    @sort_order = params[:order] || 'recently_watched'
+    @movies = sort_movies(Movie.all)
     slim :movies
   end
 
@@ -28,5 +30,19 @@ class Movies < Sinatra::Base
   get '/movies/:id/edit' do
     @movie = Movie.find(params[:id])
     slim 'movies/new'.to_sym
+  end
+
+  private
+
+  def sort_movies(movies)
+    if @sort_order == 'recently_watched'
+      movies.order(date_watched: :desc)
+    elsif @sort_order == 'best_rated'
+      movies.order(rating: :desc)
+    elsif @sort_order == 'newest'
+      movies.order(release_year: :desc)
+    else
+      movies
+    end
   end
 end

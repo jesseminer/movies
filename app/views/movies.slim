@@ -1,7 +1,13 @@
 .margin-bottom
   a href="/movies/new"
     button Add Movie 🎫
-- Movie.order(date_watched: :desc).each do |movie|
+.margin-bottom
+  | Sort by
+  select.sort-menu<
+    option value="recently_watched" selected=(@sort_order == 'recently_watched') Recently Watched
+    option value="best_rated" selected=(@sort_order == 'best_rated') Best Rated
+    option value="newest" selected=(@sort_order == 'newest') Newest
+- @movies.each do |movie|
   .movie
     img src=movie.image_url
     div
@@ -18,3 +24,8 @@
         == "Big dick energy rating of #{movie.rating_structure}"
     .movie-right
       a href="/movies/#{movie.id}/edit" ✏️
+
+javascript:
+  document.querySelector('.sort-menu').addEventListener('change', function (e) {
+    window.location = `/?order=${this.value}`
+  })
