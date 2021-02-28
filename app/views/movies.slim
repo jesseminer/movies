@@ -8,22 +8,22 @@
     option value="best_rated" selected=(@sort_order == 'best_rated') Best Rated
     option value="newest" selected=(@sort_order == 'newest') Newest
 - @movies.each do |movie|
-  .movie
-    img src=movie.image_url
-    div
-      | #{movie.title}
-      br
-      | #{movie.release_year}
-      br
-      - if movie.date_watched.present?
-        | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
-      - else
-        | Have not watched yet
-      - if movie.rating.present?
-        br
-        == "Big dick energy rating of #{movie.rating_structure}"
-    .movie-right
-      a href="/movies/#{movie.id}/edit" ✏️
+  .flippincool
+    .flippincool-inner
+      .flippincool-front
+        img src=movie.image_url
+      .flippincool-back
+        h1.movie-title = movie.title
+        p = movie.release_year
+        p
+          - if movie.date_watched.present?
+            | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
+          - else
+            | Have not watched yet
+        p
+          - if movie.rating.present?
+            == "Big dick energy rating of #{movie.rating_structure}"
+        a.edit-movie-link href="/movies/#{movie.id}/edit" ✏️
 
 javascript:
   document.querySelector('.sort-menu').addEventListener('change', function (e) {

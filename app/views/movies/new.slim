@@ -1,32 +1,33 @@
-a href="/" Back
-form action="/movies" method="post" enctype="multipart/form-data"
-  .margin-top
-    label for="title" Title
-  div
-    input#title type="text" name="title" required="required" value=@movie.title
-  .margin-top
-    label for="release_year" Release Year
-  div
-    input#release_year type="number" name="release_year" required="required" value=@movie.release_year
-  .margin-top
-    label for="image" Image
-  div
-    input#image type="file" name="image"
-  .margin-top
-    label for="date_watched" Date Watched
-  div
-    input#date_watched type="date" name="date_watched" value=@movie.date_watched
-  .margin-top
-    label for="rating" Rating
-  div
-    .dix = '8=====D'
-    input#rating type="range" name="rating" value=@movie.rating min="1" max="5"
-  input type="hidden" name="id" value=@movie.id
-  .save-movie
-    - if @movie.new_record?
-      button.full-width Create Movie! 🍿
-    - else
-      button.full-width Save Movie Changes! 💾
+.container
+  a href="/" Back
+  form action="/movies" method="post" enctype="multipart/form-data"
+    .margin-top
+      label for="title" Title
+    div
+      input#title type="text" name="title" required="required" value=@movie.title
+    .margin-top
+      label for="release_year" Release Year
+    div
+      input#release_year type="number" name="release_year" required="required" value=@movie.release_year
+    .margin-top
+      label for="image" Image
+    div
+      input#image type="file" name="image"
+    .margin-top
+      label for="date_watched" Date Watched
+    div
+      input#date_watched type="date" name="date_watched" value=@movie.date_watched
+    .margin-top
+      label for="rating" Rating
+    div
+      .dix = '8=====D'
+      input#rating type="range" name="rating" value=@movie.rating min="1" max="5"
+    input type="hidden" name="id" value=@movie.id
+    .save-movie
+      - if @movie.new_record?
+        button.full-width Create Movie! 🍿
+      - else
+        button.full-width Save Movie Changes! 💾
 
 javascript:
   var makeDick = function (rating) {
