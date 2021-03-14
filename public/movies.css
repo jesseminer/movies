@@ -43,6 +43,7 @@ body {
 }
 
 .movie-title {
+  line-height: normal;
   margin-top: 1.5em;
 }
 .edit-movie-link {
