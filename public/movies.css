@@ -12,8 +12,8 @@ body {
   display: inline-block;
   background-color: transparent;
   perspective: 1000px;
-  width: 400px;
-  height: 420px;
+  width: calc(25% - 2em);
+  height: 450px;
 }
 .flippincool img {
   max-height: 100%;
@@ -43,7 +43,7 @@ body {
 }
 
 .movie-title {
-  margin-top: 2.75em;
+  margin-top: 1.5em;
 }
 .edit-movie-link {
   font-size: 1.6em;
