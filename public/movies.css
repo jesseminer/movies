@@ -13,7 +13,25 @@ body {
   background-color: transparent;
   perspective: 1000px;
   width: calc(25% - 2em);
-  height: 450px;
+  height: 35vw;
+}
+@media (max-width: 1150px) {
+  .flippincool {
+    width: calc(33.33% - 2em);
+    height: 47vw;
+  }
+}
+@media (max-width: 800px) {
+  .flippincool {
+    width: calc(50% - 2em);
+    height: 70vw;
+  }
+}
+@media (max-width: 450px) {
+  .flippincool {
+    width: calc(100% - 2em);
+    height: 140vw;
+  }
 }
 .flippincool img {
   max-height: 100%;
