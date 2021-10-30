@@ -10,6 +10,10 @@
     div
       input#release_year type="number" name="release_year" required="required" value=@movie.release_year
     .margin-top
+      label for="length" Movie Length
+    div
+      input#length type="number" name="length" value=@movie.length
+    .margin-top
       label for="image" Image
     div
       input#image type="file" name="image"

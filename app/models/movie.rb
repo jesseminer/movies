@@ -10,6 +10,17 @@ class Movie < ActiveRecord::Base
 
   mount_uploader :image, MovieImageUploader
 
+  def nice_length
+    hours = length / 60
+    minutes = length % 60
+
+    if hours == 1
+      "#{hours} hour #{minutes} minutes"
+    else
+      "#{hours} hours #{minutes} minutes"
+    end
+  end
+
   def rating_structure
     if rating == 5
       '<strong>8=====D~</strong>'

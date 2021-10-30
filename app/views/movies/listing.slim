@@ -1,9 +1,12 @@
 .movie
   img src=movie.image_url
   div
-    | #{movie.title}
+    = movie.title
     br
-    | #{movie.release_year}
+    = movie.release_year
+    - if movie.length.present?
+      br
+      = movie.nice_length
     br
     - if movie.date_watched.present?
       | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}

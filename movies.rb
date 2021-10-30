@@ -1,8 +1,9 @@
 class Movies < Sinatra::Base
-  VALID_MOVIE_ATTRIBUTES = [:title, :release_year, :date_watched, :image, :rating]
+  VALID_MOVIE_ATTRIBUTES = [:title, :release_year, :date_watched, :image, :rating, :length]
 
   configure :development do
     register Sinatra::Reloader
+    also_reload './app/**/*.rb'
   end
 
   set(logging: true, server: :puma, views: settings.root + '/app/views')
