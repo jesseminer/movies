@@ -7,6 +7,28 @@ body {
   margin: 2em auto;
 }
 
+.movie {
+  display: flex;
+  border: 2px solid #bbbbbb;
+  padding: 1em;
+  border-radius: 16px;
+  margin-bottom: 1em;
+}
+.movie img {
+  margin-right: 1em;
+  max-height: 150px;
+  max-width: 100px;
+}
+
+.movie-right {
+  margin-left: auto;
+}
+
+.movie-right a {
+  font-size: 1.6em;
+  text-decoration: none;
+}
+
 .flippincool {
   margin: 1em;
   display: inline-block;

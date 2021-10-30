@@ -3,27 +3,17 @@
     button Add Movie 🎫
 .margin-bottom
   | Sort by
-  select.sort-menu<
+  select.sort-menu< style="margin-right: 20px;"
     option value="recently_watched" selected=(@sort_order == 'recently_watched') Recently Watched
     option value="best_rated" selected=(@sort_order == 'best_rated') Best Rated
     option value="newest" selected=(@sort_order == 'newest') Newest
+  a href="/?view=grid" style="margin-right: 10px;" Grid View
+  a href="/?view=list" List View
 - @movies.each do |movie|
-  .flippincool
-    .flippincool-inner
-      .flippincool-front
-        img src=movie.image_url
-      .flippincool-back
-        h1.movie-title = movie.title
-        p = movie.release_year
-        p
-          - if movie.date_watched.present?
-            | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
-          - else
-            | Have not watched yet
-        p
-          - if movie.rating.present?
-            == "Big dick energy rating of #{movie.rating_structure}"
-        a.edit-movie-link href="/movies/#{movie.id}/edit" ✏️
+  - if params[:view] == 'grid'
+    == slim 'movies/tile'.to_sym, locals: { movie: movie }
+  - else
+    == slim 'movies/listing'.to_sym, locals: { movie: movie }
 
 javascript:
   document.querySelector('.sort-menu').addEventListener('change', function (e) {
