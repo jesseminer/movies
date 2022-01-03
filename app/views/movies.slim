@@ -1,14 +1,16 @@
-.margin-bottom
+.margin-bottom.flex.space-between.vertical-center
+  div
+    | Sort by
+    select.sort-menu< style="margin-right: 20px;"
+      option value="recently_watched" selected=(@sort_order == 'recently_watched') Recently Watched
+      option value="best_rated" selected=(@sort_order == 'best_rated') Best Rated
+      option value="newest" selected=(@sort_order == 'newest') Newest
+    a href="/?view=grid" style="margin-right: 10px;" Grid View
+    a href="/?view=list" style="margin-right: 10px;" List View
+    a href="/insights" style="margin-right: 10px;" Insights
+    a href="/watchlist" Watchlist
   a href="/movies/new"
     button Add Movie 🎫
-.margin-bottom
-  | Sort by
-  select.sort-menu< style="margin-right: 20px;"
-    option value="recently_watched" selected=(@sort_order == 'recently_watched') Recently Watched
-    option value="best_rated" selected=(@sort_order == 'best_rated') Best Rated
-    option value="newest" selected=(@sort_order == 'newest') Newest
-  a href="/?view=grid" style="margin-right: 10px;" Grid View
-  a href="/?view=list" List View
 - @movies.each do |movie|
   - if params[:view] == 'grid'
     == slim 'movies/tile'.to_sym, locals: { movie: movie }

@@ -1,6 +1,7 @@
 body {
   font-family: Arial;
   line-height: 1.35em;
+  margin: 1.5em;
 }
 .container {
   max-width: 600px;
@@ -162,4 +163,16 @@ button {
 
 .full-width {
   width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.vertical-center {
+  align-items: center;
 }

@@ -33,6 +33,14 @@ class Movies < Sinatra::Base
     slim 'movies/new'.to_sym
   end
 
+  get '/insights' do
+    slim 'insights/show'.to_sym
+  end
+
+  get '/watchlist' do
+    slim 'watchlist/show'.to_sym
+  end
+
   private
 
   def sort_movies(movies)
