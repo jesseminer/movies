@@ -9,8 +9,5 @@ gem 'puma'
 gem 'rake'
 gem 'sinatra'
 gem 'sinatra-activerecord'
+gem 'sinatra-contrib' # for Sinatra::Reloader and cookies
 gem 'slim'
-
-group :development do
-  gem 'sinatra-contrib' # for Sinatra::Reloader and cookies
-end
