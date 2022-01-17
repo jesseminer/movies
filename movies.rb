@@ -8,8 +8,11 @@ class Movies < Sinatra::Base
 
   set(logging: true, server: :puma, views: settings.root + '/app/views')
 
+  helpers Sinatra::Cookies
+
   get '/' do
-    @sort_order = params[:order] || 'recently_watched'
+    cookies[:order] = params[:order] if params[:order].present?
+    @sort_order = cookies[:order] || 'recently_watched'
     @movies = sort_movies(Movie.all)
     slim :movies
   end

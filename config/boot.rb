@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/cookies'
 require 'sinatra/reloader' if Sinatra::Application.development?
 require 'sinatra/activerecord'
 require 'fog/google'
