@@ -1,6 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial;
   line-height: 1.35em;
+  margin: 0;
+}
+.top-bun {
+  background-color: #0404ae;
+  font-size: 1.1em;
+  padding-left: 2em;
+}
+.top-bun a {
+  color: white;
+  display: inline-block;
+  padding: 1.5em 2em 1.2em 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.top-bun a:hover {
+  background-color: #2424de;
+}
+.top-bun .line {
+  border-bottom: 1px solid transparent;
+  margin-top: 0.8em;
+}
+.top-bun a.current-page .line {
+  border-color: white;
+}
+
+.the-meat {
   margin: 1.5em;
 }
 .container {
