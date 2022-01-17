@@ -1,10 +1,13 @@
 def nice_length(minutes)
-  hours = minutes / 60
+  days = minutes / 1440
+  hours = (minutes / 60) % 24
   minutes = minutes % 60
 
+  days_string = "#{days} days" if days > 0
+
   if hours == 1
-    "#{hours} hour #{minutes} minutes"
+    "#{days_string} #{hours} hour #{minutes} minutes"
   else
-    "#{hours} hours #{minutes} minutes"
+    "#{days_string} #{hours} hours #{minutes} minutes"
   end
 end
