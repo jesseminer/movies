@@ -10,6 +10,9 @@ class Movie < ActiveRecord::Base
 
   mount_uploader :image, MovieImageUploader
 
+  scope :not_watched, -> { where(date_watched: nil) }
+  scope :watched, -> { where.not(date_watched: nil) }
+
   def rating_structure
     if rating == 5
       '<strong>8=====D~</strong>'

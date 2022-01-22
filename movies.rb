@@ -13,7 +13,7 @@ class Movies < Sinatra::Base
   get '/' do
     cookies[:order] = params[:order] if params[:order].present?
     @sort_order = cookies[:order] || 'recently_watched'
-    @movies = sort_movies(Movie.all)
+    @movies = sort_movies(Movie.watched)
     slim :movies
   end
 
@@ -41,6 +41,7 @@ class Movies < Sinatra::Base
   end
 
   get '/watchlist' do
+    @movies = Movie.not_watched
     slim 'watchlist/show'.to_sym
   end
 

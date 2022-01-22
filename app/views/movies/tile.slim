@@ -7,11 +7,7 @@
       p = movie.release_year
       - if movie.length.present?
         p = nice_length(movie.length)
-      p
-        - if movie.date_watched.present?
-          | Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
-        - else
-          | Have not watched yet
+      p Watched on #{movie.date_watched.strftime('%a. %B %e, %Y')}
       p
         - if movie.rating.present?
           == "Big dick energy rating of #{movie.rating_structure}"

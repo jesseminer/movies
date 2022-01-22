@@ -1,1 +1,5 @@
-p its me ya girl KT
+.margin-bottom.flex.space-between.vertical-center
+  a href="/movies/new"
+    button Add Movie 🎫
+- @movies.each do |movie|
+  == slim 'watchlist/listing'.to_sym, locals: { movie: movie }
