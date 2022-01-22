@@ -2,9 +2,12 @@
   a href="/"
     span My Movies
     .line
-  a.current-page href="/watchlist"
+  a href="/watchlist"
     span Watchlist
     .line
   a href="/insights"
     span Insights
     .line
+
+javascript:
+  document.querySelector('a[href="#{request.path}"]').classList.add('current-page')
