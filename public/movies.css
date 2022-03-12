@@ -169,10 +169,11 @@ button {
   border: none;
   font-size: 1em;
   height: 15px;
-  margin-left: 5.5em;
-  margin-top: -21.5px;
+  left: 87px;
   outline: none;
-  width: 25.3em;
+  position: absolute;
+  top: 1px;
+  width: 24.9em;
 }
 
 #rating::-moz-range-thumb {
@@ -195,7 +196,7 @@ button {
 }
 
 .save-movie {
-  margin-top: 4em;
+  margin-top: 5em;
 }
 
 .full-width {
@@ -212,4 +213,8 @@ button {
 
 .vertical-center {
   align-items: center;
+}
+
+.position-relative {
+  position: relative;
 }

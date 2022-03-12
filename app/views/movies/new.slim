@@ -22,7 +22,7 @@
       input#date_watched type="date" name="date_watched" value=@movie.date_watched
     .margin-top
       label for="rating" Rating
-    div
+    .position-relative
       .dix = '8=====D'
       input#rating type="range" name="rating" value=@movie.rating min="1" max="5"
     input type="hidden" name="id" value=@movie.id
