@@ -24,11 +24,12 @@ class Movies < Sinatra::Base
 
   post '/movies' do
     if params[:id].present?
-      Movie.find(params[:id]).update(params.slice(*VALID_MOVIE_ATTRIBUTES))
+      movie = Movie.find(params[:id])
+      movie.update(params.slice(*VALID_MOVIE_ATTRIBUTES))
     else
-      Movie.create(params.slice(*VALID_MOVIE_ATTRIBUTES))
+      movie = Movie.create(params.slice(*VALID_MOVIE_ATTRIBUTES))
     end
-    redirect to('/')
+    redirect to(movie.date_watched.present? ? '/' : '/watchlist')
   end
 
   get '/movies/:id/edit' do
