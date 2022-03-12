@@ -7,5 +7,7 @@
     - if movie.length.present?
       br
       = nice_length(movie.length)
+    br
+    | Added on #{movie.created_at.strftime('%a. %B %e, %Y')}
   .movie-right
     a href="/movies/#{movie.id}/edit" ✏️
