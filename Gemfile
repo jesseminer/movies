@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '3.3.7'
 
-gem 'activerecord', '< 6.1'
 gem 'carrierwave'
 gem 'fog-google'
 gem 'pg'
