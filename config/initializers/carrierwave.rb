@@ -9,5 +9,6 @@ CarrierWave.configure do |config|
     config.fog_directory = 'jkmovies'
   else
     config.storage = :file
+    config.root = Dir.pwd
   end
 end
